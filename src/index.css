@@ -1,0 +1,24 @@
+/* 1. EL IMPORT SIEMPRE ARRIBA DE TODO */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+/* 2. RUTA PARA HERO UI */
+@source "../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* 3. APLICACIÓN GLOBAL REFORZADA */
+:root {
+  font-family: var(--font-sans);
+}
+
+html, body {
+  font-family: var(--font-sans) !important;
+  background-color: #f8fafc;
+  color: #0f172a;
+  /* Suavizado de fuente correcto */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
