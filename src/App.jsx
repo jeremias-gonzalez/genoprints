@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
  // Podés renombrar el archivo luego
-import Catalogo from './pages/Productos'; // Vinculamos Ventas al Catálogo 3D
+import Categoria from './pages/Categoria'; // Vinculamos Ventas al Catálogo 3D
 import Proyectos from './pages/Servicios'; // Vinculamos Alquileres a Proyectos realizados
 import Home from './pages/Home';
 import NavbarApp from './components/Navbar';
@@ -20,7 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
      
           {/* Cambiamos los paths para que tengan sentido con impresión 3D */}
-          <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/categoria/:slug" element={<Categoria />} />
           <Route path="/proyectos" element={<Proyectos />} />
           <Route path="/detalle/:id" element={<DetalleProducto />} />
           
