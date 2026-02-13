@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from "../public/iconogverdefondoblanco.png"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -7,52 +7,53 @@ const Footer = () => {
   return (
     <footer className="bg-white border-t border-slate-100 pt-16 pb-8 font-sans">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 items-start">
           
-          {/* COLUMNA 1: BRANDING */}
-          <div className="col-span-1 md:col-span-1 space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg rotate-12 flex items-center justify-center shadow-md shadow-blue-100">
-                <span className="text-white font-black text-sm -rotate-12">C</span>
-              </div>
-              <h2 className="text-xl font-black tracking-tighter text-slate-900">Corpus</h2>
-            </div>
-            <p className="text-sm text-slate-400 font-medium leading-relaxed italic">
-              Elevando el estándar inmobiliario en el sur de Córdoba con gestión transparente y moderna.
+          {/* COLUMNA 1: BRANDING - LOGO XL */}
+          <div className="col-span-1 md:col-span-1 space-y-4">
+            <Link to="/" className="inline-block transition-transform hover:scale-105">
+              {/* h-32 (128px) le da una presencia visual muy fuerte */}
+              <img 
+                src={logo} 
+                alt="GENO PRINTS Logo" 
+                className="h-32 w-auto object-contain" 
+              />
+            </Link>
+            <p className="text-sm text-emerald-900/60 font-medium leading-relaxed italic max-w-[250px]">
+              Transformando ideas en realidad física a través de tecnología aditiva de precisión en el corazón de Córdoba.
             </p>
           </div>
 
           {/* COLUMNA 2: NAVEGACIÓN */}
-          <div className="space-y-6">
-            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900">Explorar</h3>
+          <div className="space-y-6 md:pt-4">
+            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-900">Catálogo</h3>
             <ul className="space-y-4 text-sm font-bold text-slate-500">
-              <li><Link to="/ventas" className="hover:text-blue-600 transition-colors">Ventas</Link></li>
-              <li><Link to="/alquileres" className="hover:text-blue-600 transition-colors">Alquileres</Link></li>
-              <li><Link to="/tasaciones" className="hover:text-blue-600 transition-colors">Tasaciones</Link></li>
+              <li><Link to="/catalogo" className="hover:text-emerald-600 transition-colors">Ver Catálogo</Link></li>
+              <li><Link to="/proyectos" className="hover:text-emerald-600 transition-colors">Proyectos Realizados</Link></li>
+              <li><Link to="/servicios" className="hover:text-emerald-600 transition-colors">Servicios Técnicos</Link></li>
             </ul>
           </div>
 
-          {/* COLUMNA 3: EMPRESA */}
-          <div className="space-y-6">
-            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900">Empresa</h3>
+          {/* COLUMNA 3: INFORMACIÓN */}
+          <div className="space-y-6 md:pt-4">
+            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-900">Empresa</h3>
             <ul className="space-y-4 text-sm font-bold text-slate-500">
-              <li><Link to="/nosotros" className="hover:text-blue-600 transition-colors">Sobre Nosotros</Link></li>
-              <li><Link to="/contacto" className="hover:text-blue-600 transition-colors">Contacto</Link></li>
-              <li><Link to="/login" className="hover:text-blue-600 transition-colors">Panel Staff</Link></li>
+              <li><Link to="/nosotros" className="hover:text-emerald-600 transition-colors">Sobre el Taller</Link></li>
+              <li><Link to="/contacto" className="hover:text-emerald-600 transition-colors">Presupuestos</Link></li>
             </ul>
           </div>
 
           {/* COLUMNA 4: CONTACTO LOCAL */}
-          <div className="space-y-6">
-            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900">Ubicación</h3>
+          <div className="space-y-6 md:pt-4">
+            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-900">Ubicación</h3>
             <div className="text-sm font-bold text-slate-500 space-y-2">
-              <p className="text-slate-900">Río Cuarto, Córdoba</p>
+              <p className="text-emerald-950">Río Cuarto, Córdoba</p>
               <p className="font-medium">Argentina</p>
               <a 
-                href="https://wa.me/tu-numero" 
-                className="inline-block pt-2 text-blue-600 hover:underline"
+                href="https://wa.me/tu-numero-de-geno-prints" 
+                className="inline-block pt-2 text-emerald-600 font-black hover:underline"
               >
-                WhatsApp Business →
+                Consultas por WhatsApp →
               </a>
             </div>
           </div>
@@ -60,15 +61,15 @@ const Footer = () => {
 
         {/* LÍNEA FINAL */}
         <div className="pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-            © {currentYear} Corpus Gestión Inmobiliaria. Todos los derechos reservados.
+          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center md:text-left">
+            © {currentYear} GENO PRINTS Impresión 3D. Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-slate-300 hover:text-slate-900 transition-colors">
+            <a href="https://instagram.com/genoprints" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-emerald-600 transition-colors">
               <span className="text-[10px] font-black uppercase tracking-widest">Instagram</span>
             </a>
-            <a href="#" className="text-slate-300 hover:text-slate-900 transition-colors">
-              <span className="text-[10px] font-black uppercase tracking-widest">Facebook</span>
+            <a href="#" className="text-slate-300 hover:text-emerald-600 transition-colors">
+              <span className="text-[10px] font-black uppercase tracking-widest">Portfolio</span>
             </a>
           </div>
         </div>

@@ -1,38 +1,38 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import ProtectedRoute from './lib/ProtectedRoute';
-import Login from './pages/Login';
-import AdminDashboard from './admin/AdminDashboard';
-import CargarInmueble from './admin/CargarInmueble';
-import EditarInmueble from './admin/EditarInmueble';
-import Ventas from './pages/Ventas';
-import Alquileres from './pages/Alquileres';
+
+ // Podés renombrar el archivo luego
+import Catalogo from './pages/Productos'; // Vinculamos Ventas al Catálogo 3D
+import Proyectos from './pages/Servicios'; // Vinculamos Alquileres a Proyectos realizados
 import Home from './pages/Home';
 import NavbarApp from './components/Navbar';
 import Footer from './Footer';
-import DetalleInmueble from './pages/DetalleInmueble';
+import DetalleProducto from './pages/ProductDetail';
 
 function App() {
   return (
     <BrowserRouter>
-    
-      <Routes>
-        {/* RUTA PÚBLICA */}
-         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/ventas" element={<Ventas />} />
-        <Route path="/alquileres" element={<Alquileres />} />
-        <Route path="/detalle/:id" element={<DetalleInmueble />} />
-        {/* BLOQUE PROTEGIDO: Todo lo que esté acá adentro requiere Login */}
-        <Route element={<ProtectedRoute />}>
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/nuevo" element={<CargarInmueble />} />
-          <Route path="/admin/editar/:id" element={<EditarInmueble />} />
-        </Route>
+      {/* Insertamos el Navbar aquí para que sea persistente en todas las rutas */}
+      <NavbarApp />
+      
+      <main className="min-h-[80vh]">
+        <Routes>
+          {/* RURAS PÚBLICAS DE GENO PRINTS */}
+          <Route path="/" element={<Home />} />
+     
+          {/* Cambiamos los paths para que tengan sentido con impresión 3D */}
+          <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/proyectos" element={<Proyectos />} />
+          <Route path="/detalle/:id" element={<DetalleProducto />} />
+          
+          {/* BLOQUE PROTEGIDO: Gestión del taller 3D */}
+   
+          {/* REDIRECCIÓN GLOBAL AL HOME */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
 
-        {/* REDIRECCIÓN GLOBAL */}
-        <Route path="*" element={<Navigate to="/login" replace />} />
-      </Routes>
-      <Footer/>
+      {/* Footer minimalista al final de todas las páginas */}
+      <Footer />
     </BrowserRouter>
   );
 }

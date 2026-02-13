@@ -8,7 +8,7 @@ const Home = () => {
     <div className="min-h-screen font-sans bg-slate-50">
       
       {/* --- NAVBAR --- */}
-      <NavbarApp/>
+     
 
       {/* --- HERO SECTION --- */}
       {/* Imagen: Cambiamos la casa por un primer plano de impresión 3D de alta calidad */}
@@ -23,12 +23,12 @@ const Home = () => {
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mt-[-5vh]">
           {/* Texto en color verde esmeralda brillante para resaltar sobre el oscuro */}
           <h2 className="text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6 drop-shadow-lg text-white">
-            Transforma tus bits en <br />
-            <span className="text-emerald-400 inline-block">objetos reales.</span>
+            El futuro de tus ideas<br />
+            <span className="text-emerald-400 inline-block">esta acá</span>
           </h2>
           
           <p className="text-lg md:text-xl text-emerald-50 mb-10 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-            Servicio de impresión 3D en Río Cuarto. Desde prototipos técnicos hasta figuras coleccionables con la mejor resolución.
+           Materializamos lo que queres al mejor precio.
           </p>
           
           <Link to="/catalogo">

@@ -23,7 +23,6 @@ const Ventas = () => {
 
   return (
     <> 
-    <NavbarApp/>
     <main className="w-full pt-10 font-sans">
       
       <div className="px-8 mb-12">
